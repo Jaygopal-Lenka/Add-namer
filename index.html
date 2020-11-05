@@ -1,0 +1,60 @@
+<html>
+    <body>
+        <center>
+        <h3>List of the students in my class</h3> 
+        <div>
+            <span>1</span>
+            <input type="text" placeholder="Name of the student" id="name1">
+            <br>
+            <span>2</span>
+            <input type="text" placeholder="Name of the student" id="name2">
+            <br>
+            <span>3</span>
+            <input type="text" placeholder="Name of the student" id="name3">
+            <br>
+            <span>4</span>
+            <input type="text" placeholder="Name of the student" id="name4">
+            <br>
+            <button onclick="print()" id="printer">
+             Add
+            </button>
+            <button onclick="sort()" id="sorter">
+            Sort Names
+            </button>
+        </div>
+        <div id="display_area1"></div>
+        </center>
+    </body>
+</html>
+<script>
+       names_array=[];
+       //Function start
+    
+    function print() {
+        var names1= document.getElementById("name1").value;
+        var names2= document.getElementById("name2").value;
+        var names3= document.getElementById("name3").value;
+        var names4= document.getElementById("name4").value;
+
+        names_array.push(names1);
+        names_array.push(names2);
+        names_array.push(names3);
+        names_array.push(names4);
+
+        document.getElementById("display_area1").innerHTML=names_array;
+        document.getElementById("printer").style.display="none";
+        document.getElementById("display_area1").style.display="inline-block";
+    }
+
+    function sort(){
+        names_array.sort();
+        document.getElementById("display_area1").innerHTML= names_array;
+    }
+</script>
+<style>
+    body {
+    text-align: center;
+    background-color: #F0F4C3;
+
+}
+</style>
